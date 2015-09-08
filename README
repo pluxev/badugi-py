@@ -1,1 +1,13 @@
-My Project
+A deck of cards and printer of unicode glyphs
+
+used 
+
+https://github.com/lmacken/unicards
+
+and 
+
+https://github.com/DRab7792/deck-of-cards/blob/master/deckOfCards.py
+
+as references
+
+
