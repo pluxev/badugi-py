@@ -57,8 +57,7 @@ unicard={'As' : u'\x1b[30m\U0001F0A1\x1b[0m',
 
 
 #choice = input('which card?')
-#print(cards[choice])
+#print(unicard[choice])
 
-#for symbol in sorted(cards.values()):
-#	print(symbol, end=" ")
-
+#for symbol in sorted(unicard.values()):
+#print(symbol, end=" ")
