@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#ANSI for color, Unicode glyphs
 unicard={'As' : u'\x1b[30m\U0001F0A1\x1b[0m',
          '2s' : u'\x1b[30m\U0001F0A2\x1b[0m',
          '3s' : u'\x1b[30m\U0001F0A3\x1b[0m',
