@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from printer import unicard
+from evaluator import Badugi
 import random
 class card:
 	def __init__(self, rank, suit):
@@ -31,11 +32,30 @@ class Deck:
 
 	def shuffle(self):
 		random.shuffle(self.cards)
+	
 
+	def deckpop(self):
+		return self.cards.pop()
 
+class Hand:
+	
+	def __init__(self):
+		self.cards = []
 
+	
+	def deal(self, deck, num):
+		for i in range (0,num):
+			self.cards.append(deck.deckpop())
+
+		
 d = Deck()
 d.shuffle()
-for card in d.cards:
-	print(unicard[card.realRank+card.suit],end=" ")
-
+h = Hand()
+h.deal(d,4)
+#h.cards.append(card(12,'s'))
+for card in h.cards:
+	print(unicard[card.realRank+card.suit])
+b = Badugi(h.cards)
+for rank in b.handRank(h.cards):
+	print(rank, end='')
+print(' ')
