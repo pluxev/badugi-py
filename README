@@ -10,7 +10,7 @@ Instrucitons:
 
 to run:
 
-> python3 game.py
+$python3 game.py
 
 to discard the first card and third card:
 enter 13 or 31 or 13aaaaaaaa3331
