@@ -10,38 +10,37 @@ class Badugi:
 			print("not a valid badugi input")
 					
 	def handRank(self, hand):
-		ordered = sorted(hand, key=lambda card: card.rank)
 		temphand = sorted(hand, key=lambda card: card.rank)
+		temphand2 = sorted(hand, key=lambda card: card.rank)
 		discard = []
 		
-		for x in range(0, len(ordered)):
-			for y in range(x+1, len(ordered)):
-				if ordered[x].suit == ordered[y].suit:
-					if ordered[x].rank > ordered[y].rank:
+		for x in range(0, len(temphand2)):
+			for y in range(x+1, len(temphand2)):
+				if temphand2[x].suit == temphand2[y].suit:
+					if temphand2[x].rank > temphand2[y].rank:
 						try:
-							temphand.remove(ordered[x])
-							discard.append(ordered[x])
+							temphand.remove(temphand2[x])
+							discard.append(temphand2[x])
 						except ValueError:
 							pass
 					else:	
 						try:	
-							temphand.remove(ordered[y])
-							discard.append(ordered[y])
+							temphand.remove(temphand2[y])
+							discard.append(temphand2[y])
 						except ValueError:
 							pass
 		
-		
-		ordered = temphand 	
+		 	
 		xswitcher = 100
 		x1switcher = 100
 		x = 0
-		while x < len(ordered)-1:
-			if ordered[x].rank == ordered[x+1].rank:
+		while x < len(temphand)-1:
+			if temphand[x].rank == temphand[x+1].rank:
 				for y in range(0, len(discard)):
-					if ordered[x].suit == discard[y].suit:	
+					if temphand[x].suit == discard[y].suit:	
 						replacepaired = False
-						for z in range(0, len(ordered)):
-							if discard[y].rank == ordered[z].rank and z != x:
+						for z in range(0, len(temphand)):
+							if discard[y].rank == temphand[z].rank and z != x:
 								replacepaired = True
 						if not replacepaired:
 							if xswitcher == 100:
@@ -49,10 +48,10 @@ class Badugi:
 							else:
 								if discard[xswitcher].rank > discard[y].rank:
 									xswitcher = y
-					elif ordered[x+1].suit == discard[y].suit:
+					elif temphand[x+1].suit == discard[y].suit:
 						replacepaired = False
-						for z in range(0, len(ordered)):
-							if discard[y].rank == ordered[z].rank and z != x:
+						for z in range(0, len(temphand)):
+							if discard[y].rank == temphand[z].rank and z != x:
 								replaced = True
 						if not replacepaired:
 							if x1switcher == 100:
@@ -63,26 +62,26 @@ class Badugi:
 				if xswitcher != 100 and x1switcher == 100:
 					try:
 						temphand.append(discard.pop(xswitcher))
-						discard.append(ordered.pop(x))
+						discard.append(temphand.pop(x))
 					except ValueError:
 						pass
 				if xswitcher == 100 and x1switcher != 100:		
 					try:
 						temphand.append(discard.pop(x1switcher))
-						discard.append(ordered.pop(x+1))
+						discard.append(temphand.pop(x+1))
 					except ValueError:
 						pass
 				if xswitcher != 100 and x1switcher != 100:
 					if discard[xswitcher].rank < discard[x1switcher].rank:
 						try:
 							temphand.append(discard.pop(xswitcher))
-							discard.append(ordered.pop(x))
+							discard.append(temphand.pop(x))
 						except ValueError:
 							pass
 					else:
 						try:
 							temphand.append(discard.pop(x1switcher))
-							discard.append(ordered.pop(x+1))
+							discard.append(temphand.pop(x+1))
 						except ValueError:
 							pass
 				if xswitcher == 100 and x1switcher == 100:

@@ -20,9 +20,9 @@ while x < 3:
 	choice = input(" which card(s) to discard? ")
 	for i in choice:
 		try:
-			if int(i) >= 0 and int(i) < 4:
+			if int(i) > 0 and int(i) < 5:
 				try:
-					temp.cards.remove(h.cards[int(i)])	
+					temp.cards.remove(h.cards[int(i)-1])	
 				except ValueError:	
 					pass
 		except ValueError:

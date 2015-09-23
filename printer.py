@@ -62,4 +62,3 @@ unicard={'As' : u'\x1b[30m\U0001F0A1\x1b[0m',
 
 #for symbol in sorted(unicard.values()):
 #print(symbol, end=" ")
-
