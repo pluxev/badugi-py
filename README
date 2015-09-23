@@ -1,15 +1,24 @@
-A deck of cards and printer of unicode glyphs
+A deck of cards and printer of unicode glyphs.
 
-used 
+Used as references:
+ 
+* https://github.com/lmacken/unicards
+* https://github.com/DRab7792/deck-of-cards/blob/master/deckOfCards.py
 
-https://github.com/lmacken/unicards
 
-and 
+Instrucitons:
 
-https://github.com/DRab7792/deck-of-cards/blob/master/deckOfCards.py
+to run:
+```
+python3 game.py
+```
 
-as references
+to discard the first card and third card:
+enter 13 or 31 or 13aaaaaaaa3331
 
-Now a badugi hand evaluator.
+to discard no cards:
+enter nothing or anyting not containing: 1 2 3 4
 
-TODO: comments in code
+After 3 draws, it will tell you your hand. 
+
+Enter y to play again.
