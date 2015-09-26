@@ -53,16 +53,17 @@ class Hand:
 '''d = Deck()
 d.shuffle()
 h = Hand()
-h.deal(d,4)
-#h.cards.append(card(10,'h'))
-#h.cards.append(card(11,'h'))
-#h.cards.append(card(12,'h'))
-#h.cards.append(card(1,'s'))
+#h.deal(d,4)
+h.cards.append(card(12,'s'))
+h.cards.append(card(8,'h'))
+h.cards.append(card(12,'h'))
+h.cards.append(card(1,'d'))
 for card in h.cards:
 	print(unicard[card.realRank+card.suit])
 b = Badugi(h.cards)
 for rank in b.handRank(h.cards):
 	print(rank, end='')
 print(' ')'''
+
 
 

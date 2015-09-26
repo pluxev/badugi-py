@@ -91,6 +91,6 @@ class Badugi:
 	
 		badugitype = []
 		for card in sorted(temphand, key=lambda card: card.rank, reverse = True):
-			badugitype.append(card.realRank)	
+			badugitype.append(card)	
 		return badugitype
 			
